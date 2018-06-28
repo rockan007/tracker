@@ -1,37 +1,19 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-    model(){
-        return [
-            {
-                id:0,
-                location:'Asilomar',
-                sightedAt:new Date('2017-03-07')
-            },{
-                id:1,
-                location:'Asilomar',
-                sightedAt:new Date('2017-03-08')
-            },{
-                id:2,
-                location:'Asilomar',
-                sightedAt:new Date('2017-05-04')
-            },{
-                id:3,
-                location:'Asilomar',
-                sightedAt:new Date('2017-05-06')
-            },{
-                id:4,
-                location:'Asilomar',
-                sightedAt:new Date('2017-05-10')
-            },{
-                id:5,
-                location:'Asilomar',
-                sightedAt:new Date('2017-05-20')
-            },{
-                id:6,
-                location:'Asilomar',
-                sightedAt:new Date('2017-08-16')
-            }
-        ]
-    }
+  model() {
+    let record0 = this.store.createRecord('sighting', {
+      location: 'Atlanta',
+      sightedAt: new Date('2017-02-23')
+    })
+    let record1 = this.store.createRecord('sighting', {
+      location: 'Banama',
+      sightedAt: new Date('2018-05-16')
+    })
+    let record2 = this.store.createRecord('sighting', {
+      location: 'Canada',
+      sightedAt: new Date('2018-06-12')
+    })
+    return [record0, record1, record2];
+  }
 });
